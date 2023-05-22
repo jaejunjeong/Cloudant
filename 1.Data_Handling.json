@@ -1,0 +1,115 @@
+# Create document
+{
+    "_id":"1",
+    "square_feet":1500,
+    "bedrooms":3,
+    "price":147890
+}
+
+{
+    "_id":"2",
+    "square_feet":1800,
+    "bedrooms":3,
+    "price":182650
+}
+
+{
+    "_id":"3",
+    "square_feet":2000,
+    "bedrooms":3,
+    "price":201260
+}
+
+{
+    "_id":"4",
+    "square_feet":2200,
+    "bedrooms":4,
+    "price":234980
+}
+
+{
+    "_id":"5",
+    "square_feet":1100,
+    "bedrooms":2,
+    "price":114310
+}
+
+{
+    "_id":"6",
+    "square_feet":1400,
+    "bedrooms":3,
+    "price":123140,
+    "type":"apartment",
+    "floor":5
+}
+
+{
+    "_id":"7",
+    "square_feet":3400,
+    "bedrooms":4,
+    "price":342720,
+    "type":"villa",
+    "car_parks":3
+}
+
+# Select all fields in all documents with _id greater than 4
+{
+   "selector": {
+      "_id": {
+         "$gt": "4"
+      }
+   }
+}
+
+# Select all fields in all documents with _id less than 4
+{
+   "selector": {
+      "_id": {
+         "$lt": "4"
+      }
+   }
+}
+
+# Select the fields _id, square_feet and price in all documents
+{
+   "selector": {},
+   "fields": [
+      "_id",
+      "price",
+      "square_feet"
+   ]
+}
+
+# Select the fields _id, square_feet and price in documents with _id less than 4
+{
+   "selector": {
+   "_id": {
+         "$lt": "4"
+      }
+   },
+   "fields": [
+      "_id",
+      "price",
+      "square_feet"
+   ]
+}
+
+# Select the fields _id, bedrooms and price in documents with _id greater than 2 and sort by _id ascending
+{
+   "selector": {
+      "_id": {
+         "$gt": "2"
+      }
+   },
+   "fields": [
+      "_id",
+      "price",
+      "square_feet"
+   ],
+   "sort": [
+      {
+         "_id": "asc"
+      }
+   ]
+}
+
