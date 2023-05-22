@@ -1,0 +1,46 @@
+# Create JSON file at the "create document"
+{
+  "_id": "1",
+  "Topic" : "NoSQL Databases",
+  "Lesson" : "IBM Cloudant"
+}
+
+# Perfome select all at the "query"
+{
+   "selector": {}
+}
+
+# Basic query example
+{
+  "selector": {
+    "_id": {
+      "$gt": "0"
+    }
+  },
+  "fields": [
+    "_id",
+    "_rev"
+  ],
+  "sort": [
+    {
+      "_id": "asc"
+    }
+  ]
+}
+
+# Basic database replication setting at the "replication"
+Under Source
+  Select Type = Local database
+  Select Name = training
+  Select Authentication = "IAM Authentication"
+  Paste the api key you copied earlier in the IAM API Key textbox.
+ 
+Under Target
+  Select Type = New local database
+  Select Name = training_replica
+  Select Authentication = "IAM Authentication"
+  Paste the api key you copied earlier in the IAM API Key textbox.
+ 
+Under Options:
+  Select Type = Continuous
+
