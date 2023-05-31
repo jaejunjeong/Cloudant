@@ -184,6 +184,16 @@ curl -X POST $CLOUDANTURL/diamonds/_find \
         }
     }'
 
+# Query for diamonds with carat size of 0.3 and specific fields
+curl -X POST $CLOUDANTURL/diamonds/_find \
+-H"Content-Type: application/json" \
+-d'{ "selector":
+        {
+            "carat":0.3
+        }, 
+        "fields" ["price","_id"]
+    }'
+
 # Query for diamonds with price more than 345
 curl -X POST $CLOUDANTURL/diamonds/_find \
 -H"Content-Type: application/json" \
