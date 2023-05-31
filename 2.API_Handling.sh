@@ -1,6 +1,9 @@
 # Export your CLOUDANTURL(Credential from Cloudant)
 export CLOUDANTURL="Insert URL"
 
+# Export json at the terminal
+curl -XPOST $CLOUDANTURL/movies/_bulk_docs -Hcontent-type:application/json -d @movie.json
+
 # Check
 curl $CLOUDANTURL
 
@@ -213,4 +216,3 @@ curl -X POST $CLOUDANTURL/diamonds/_find \
                 }
         }
     }'
-
