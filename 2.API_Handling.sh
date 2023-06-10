@@ -1,7 +1,7 @@
 # Export your CLOUDANTURL(Credential from Cloudant)
 export CLOUDANTURL="Insert URL"
 
-# Export json at the terminal
+# Export json at the to CLOUDANT
 curl -XPOST $CLOUDANTURL/movies/_bulk_docs -Hcontent-type:application/json -d @movie.json
 
 # Check
