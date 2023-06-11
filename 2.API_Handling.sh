@@ -4,6 +4,18 @@ export CLOUDANTURL="Insert URL"
 # Export json at the to CLOUDANT
 curl -XPOST $CLOUDANTURL/movies/_bulk_docs -Hcontent-type:application/json -d @movie.json
 
+# Cloudant json import, export tool
+npm install -g couchimport@1.4.0
+
+# Check Cloudantimport version
+couchimport --version
+
+# Export data from diamonds into csv format
+couchexport --url $CLOUDANTURL --db diamonds --delimiter "," > diamonds.csv
+
+# Export data from diamonds into json format
+couchexport --url $CLOUDANTURL --db diamonds --type jsonl > diamonds.json
+
 # Check
 curl $CLOUDANTURL
 
